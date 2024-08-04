@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src\css\style.css">
+    <link rel="stylesheet" href="src/css/output.css">
+    <title>Site Roupas</title>
+</head>
+<body>
+    <header>
+        <div class="marca">
+            <div class="logo">
+            </div>
+
+            <h1 class="title">EduStores</h1>
+
+            <div class="time">
+                <h3>Seg á Sex - 12:00 ás 20:30</h3>
+                <h3>Sab e Dom - 8:00 ás 20:30</h3>
+            </div>
+
+            <div class="timer hidden bg-green-500" id="data-span">
+                <h3 class="">Aberto</h3>
+            </div>
+
+            <div class="timer hidden bg-red-500" id="data-span-close">
+                <h3 class="">Fechado</h3>
+            </div>
+
+            <div class="mt-3">
+                <a href="https://www.instagram.com/edu.stores/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram text-white text-3xl"></i></a>
+            </div>
+        </div>
+    </header>
+
+  <!--MODAL CART-->
+<div class="hidden w-full h-full fixed top-0 left-0 z-[99] items-center justify-center" id="modal">
+    <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[40%]">
+        <h2 class="text-center font-bold text-2xl mb-2">Meu Carrinho</h2>
+
+        <div id="cart-itens" class="flex justify-between mb-2 flex-col"></div>
+
+        <p class="font-bold">Total: <span id="card-total">0.00</span></p>
+
+        <p class="font-bold mt-2">Endereço de entrega:</p>
+        <input 
+        type="text"
+        placeholder="Digite o seu Endereço completo..." 
+        name="" 
+        id="adress"
+        class="w-full border-2 p-1 rounded my-1">
+        <p class="text-red-500 hidden" id="adress-warn">Digite o seu Endereço completo!</p>
+
+        <div class="flex items-center justify-between mt-4 w-full">
+            <button id="close-modal-btn">Fechar</button>
+
+            <button id="checkout-btn" class="bg-green-500 text-white py-1 px-4">Finalizar Pedido</button>
+        </div>
+    </div>
+</div>
+<!--FIM MODAL CART-->
+
+<!--my-9 py-10 grid grid-cols-4 md:grid-cols-7 lg:grid-cols-8 gap-8 -->
+    <section id="categoria" class="flex overflow-x-auto space-x-7 w-1/2 gap-8 ">
+        
+        <a href="#produtos"><div class="w-17 h-17 items-center ">
+            <div class="w-14 h-14 border-l-zinc-800  items-center rounded-full">
+                <img class="rounded-full w-full h-full border" src="src/img/longlm.jpeg" alt="" srcset="">
+            </div>
+            <h3 class="text-center">Camisa LongLine</h3>
+        </div></a><!--categoria wrapper-->
+
+        <a href="#produtos"><div class="w-17 h-17 items-center ">
+            <div class="w-14 h-14  items-center rounded-full">
+                <img class="rounded-full w-full h-full border" src="src/img/oversized.jpeg" alt="" srcset="">
+            </div>
+            <h3 class="text-center">Camisa Oversized</h3>
+        </div></a><!--categoria wrapper-->
+
+        <a href="#produtos"><div class="w-17 h-17 items-center ">
+            <div class="w-14 h-14 items-center rounded-full">
+                <img class="rounded-full w-full h-full border" src="src/img/basicam.jpeg" alt="" srcset="">
+            </div>
+            <h3 class="text-center">Camisa Básica</h3>
+        </div></a><!--categoria wrapper-->
+
+        <a href="#produtos"><div class="w-17 h-17 items-center ">
+            <div class="w-14 h-14  items-center rounded-full">
+                <img class="rounded-full w-full h-full border" src="src/img/peruanam.jpeg" alt="" srcset="">
+            </div>
+            <h3 class="text-center">Camisa Peruana</h3>
+        </div></a><!--categoria wrapper-->
+
+        <a href="#produtos"><div class="w-17 h-17 items-center ">
+            <div class="w-14 h-14 items-center rounded-full">
+                <img class="rounded-full w-full h-full border" src="src/img/golopm.jpeg" alt="" srcset="">
+            </div>
+            <h3 class="text-center">Camisa Gola Polo</h3>
+        </div></a><!--categoria wrapper-->
+
+        <a href="#produtos"><div class="w-17 h-17 items-center ">
+            <div class="w-14 h-14 bg-black items-center rounded-full">
+
+            </div>
+            <h3 class="text-center">Camisa Social</h3>
+        </div></a><!--categoria wrapper-->
+
+        <a href="#produtos"><div class="w-17 h-17 items-center ">
+            <div class="w-14 h-14 bg-black items-center rounded-full">
+                <img class="rounded-full w-full h-full border" src="src/img/shortsm.jpeg" alt="" srcset="">
+            </div>
+            <h3 class="text-center">Shorts</h3>
+        </div></a><!--categoria wrapper-->
+
+        <a href="#produtos"><div class="w-17 h-17 items-center ">
+            <div class="w-14 h-14 bg-black items-center rounded-full">
+
+            </div>
+            <h3 class="text-center">Calças</h3>
+        </div></a><!--categoria wrapper-->
+
+        
+
+    </section><!--Categorias-->
+
+    <h2 id="tipy" class="text-center text-3xl font-semibold my-5">Nosso Estoque</h2>
+
+    <!--Todos os produtos-->
+    <section id="produtos" class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-8 gap-1 w-full py-1 px-1 my-3 mb-10">
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/oversized.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Oversized(Branca)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 87.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Oversized(Branca) Tam:M"
+            data-price="87.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 1-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/golopm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Gola Polo(Branca)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 52.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Gola Polo(Branca) Tam:M"
+            data-price="52.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 2-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/golapbg.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Gola Polo(Branca)</h2>
+                <p class="font-semibold">Tamanho: G</p>
+                <p class="font-semibold">Preço: R$ 52.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Gola Polo(Branca) Tam:G"
+            data-price="52.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 3-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/golapvm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Gola Polo(Vermelha)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 52.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Gola Polo(Vermelha) Tam:M"
+            data-price="52.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 4-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/golapopp.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Gola Polo(Preta)</h2>
+                <p class="font-semibold">Tamanho: P</p>
+                <p class="font-semibold">Preço: R$ 52.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Gola Polo(Preta) Tam:P"
+            data-price="52.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 5-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/golapocp.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Gola Polo(Cinza)</h2>
+                <p class="font-semibold">Tamanho: P</p>
+                <p class="font-semibold">Preço: R$ 52.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Gola Polo(Cinza) Tam:P"
+            data-price="52.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 6-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/golapovnm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Gola Polo Nike(Vermelha)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 52.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Gola Polo Nike (Vermelha) Tam:M"
+            data-price="52.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 7-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/longlmm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa LongLine Iluminado(Marrom)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 75.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa LongLine Iluminado(Marrom) Tam:M"
+            data-price="75.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 7-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/longlbm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa LongLine Iluminado(Branca)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 75.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa LongLine Iluminado(Branca) Tam:M"
+            data-price="75.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 8-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/longlvm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa LongLine Iluminado(Vermelha)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 75.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa LongLine Iluminado(Vermelha) Tam:M"
+            data-price="75.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 9-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/longlivm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa LongLine Iluminado(Vinho)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 67.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa LongLine Iluminado(Vinho) Tam:M"
+            data-price="67.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 10-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/basicam.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Básica Boss(Preta)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 37.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Básica Boss(Preta) Tam:M"
+            data-price="37.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 11-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/basicalvpm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Básica Louis Vuitton(Preta)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 37.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Básica Louis Vuitton(Preta) Tam:M"
+            data-price="37.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 12-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/basicavg.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Básica Emporio Armani(Vermelha)</h2>
+                <p class="font-semibold">Tamanho: G</p>
+                <p class="font-semibold">Preço: R$ 37.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Básica Emporio Armani(Vermelha) Tam:G"
+            data-price="37.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 13-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/peruanam.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa Peruana Boss(Azul Claro)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 63.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa Peruana Boss(Azul Claro) Tam:M"
+            data-price="63.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 14-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/longlpm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Camisa LongLine Iluminado(Preta)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 75.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Camisa LongLine Iluminado(Preta) Tam:M"
+            data-price="75.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 15-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/shortsm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Short Tactel Diesel(Marron)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 58.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Short Tactel Diesel(Marron) Tam:M"
+            data-price="58.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 16-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/shorttvm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Short Tactel Nike(Vermelha)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 58.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Short Tactel Nike(Vermelha) Tam:M"
+            data-price="58.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 17-->
+
+        
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/shorttpm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Short Tactel Boss(Preto)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 58.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Short Tactel Boss(Preto) Tam:M"
+            data-price="58.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 18-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/shortlbm.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Short Linho Pallaz(Branco)</h2>
+                <p class="font-semibold">Tamanho: M</p>
+                <p class="font-semibold">Preço: R$ 70.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Short Linho Pallaz(Branco) Tam:M"
+            data-price="70.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 19-->
+
+        <div class="w-45 h-85 bg-gray-200 p-1 rounded">
+            <div class="w-full h-48  text-white">
+                <img class="w-full h-full"  src="src/img/shortcpp.jpeg" alt="" srcset="">
+            </div><!--Foto da roupa-->
+            <div class="w-full">
+                <h2 class="font-bold text-md">Short Cargo(Preto)</h2>
+                <p class="font-semibold">Tamanho: P</p>
+                <p class="font-semibold">Preço: R$ 75.00</p>
+            </div><!--Descrição-->
+            <button class="bg-black mt-2 w-full px-5 rounded add-to-cart text-center"
+            data-name="Short Cargo(Preto) Tam:P"
+            data-price="75.00"
+            >
+                <i class="fa fa-cart-plus text-lg text-white"></i>
+            </button>
+        </div><!--Produto 20-->
+
+    </section><!--Roupas-->
+
+    
+
+    <!--Roupas LongLine-->
+
+    <!---Button Cart Footer-->
+    <footer class="w-full py-2 bg-slate-700 fixed bottom-0 z-40 flex items-center justify-center">
+        <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
+            (<span id="cart-counter" class="cart-count">0</span>)
+            Carrinho
+            <i class="fa fa-cart-plus text-lg text-white"></i>
+        </button>
+    </footer>
+    <!---Button Cart Footer-->
+
+<!--Script-->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<script src="src\script\script.js"></script>
+</body>
+</html>
