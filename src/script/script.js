@@ -12,6 +12,130 @@ const cartCount = document.getElementById("cart-counter");
 const aberto = document.getElementById("data-span");
 const close = document.getElementById("data-span-close")
 
+//tipos prod
+const todosProd = document.getElementById("todosProd");
+const longline =  document.getElementById("longline");
+const over = document.getElementById("oversized");
+const camBasica = document.getElementById("camBasica");
+const camPer = document.getElementById("camPer");
+const golaPo = document.getElementById("golaPo");
+const social = document.getElementById("social");
+const short = document.getElementById("short");
+const calcas = document.getElementById("calcas");
+
+const longlineOp = document.getElementById("op1");
+const overOp = document.getElementById("op2");
+const cambaOp = document.getElementById("op3");
+const campeOp = document.getElementById("op4");
+const camgpOp = document.getElementById("op5");
+const camsoOp = document.getElementById("op6");
+const shortOp = document.getElementById("op7");
+const calcOp = document.getElementById("op8");
+
+longlineOp.addEventListener("click",()=>{
+    todosProd.classList.add("hidden");
+    over.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    camPer.classList.add("hidden");
+    golaPo.classList.add("hidden");
+    social.classList.add("hidden");
+    short.classList.add("hidden");
+    calcas.classList.add("hidden");
+   
+    longline.classList.remove("hidden");
+})
+
+overOp.addEventListener("click",()=>{
+    todosProd.classList.add("hidden");
+    longline.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    camPer.classList.add("hidden");
+    golaPo.classList.add("hidden");
+    social.classList.add("hidden");
+    short.classList.add("hidden");
+    calcas.classList.add("hidden");
+   
+    over.classList.remove("hidden");
+})
+
+cambaOp.addEventListener("click",()=>{
+    todosProd.classList.add("hidden");
+    longline.classList.add("hidden");
+    over.classList.add("hidden");
+    camPer.classList.add("hidden");
+    golaPo.classList.add("hidden");
+    social.classList.add("hidden");
+    short.classList.add("hidden");
+    calcas.classList.add("hidden");
+   
+    camBasica.classList.remove("hidden");
+})
+
+campeOp.addEventListener("click",()=>{
+    todosProd.classList.add("hidden");
+    longline.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    golaPo.classList.add("hidden");
+    social.classList.add("hidden");
+    short.classList.add("hidden");
+    calcas.classList.add("hidden");
+   
+    camPer.classList.remove("hidden");
+})
+
+camgpOp.addEventListener("click",()=>{
+    todosProd.classList.add("hidden");
+    longline.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    camPer.classList.add("hidden");
+    social.classList.add("hidden");
+    short.classList.add("hidden");
+    calcas.classList.add("hidden");
+   
+    golaPo.classList.remove("hidden");
+})
+
+camsoOp.addEventListener("click",()=>{
+    todosProd.classList.add("hidden");
+    longline.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    golaPo.classList.add("hidden");
+    camPer.classList.add("hidden");
+    short.classList.add("hidden");
+    calcas.classList.add("hidden");
+   
+    social.classList.remove("hidden");
+})
+
+shortOp.addEventListener("click",()=>{
+    todosProd.classList.add("hidden");
+    longline.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    golaPo.classList.add("hidden");
+    camPer.classList.add("hidden");
+    social.classList.add("hidden");
+    calcas.classList.add("hidden");
+   
+    short.classList.remove("hidden");
+})
+
+calcOp.addEventListener("click",()=>{
+    todosProd.classList.add("hidden");
+    longline.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    camBasica.classList.add("hidden");
+    golaPo.classList.add("hidden");
+    camPer.classList.add("hidden");
+    social.classList.add("hidden");
+    short.classList.add("hidden");
+   
+    calcas.classList.remove("hidden");
+})
+
 let cart=[];
 
 //Eventos
